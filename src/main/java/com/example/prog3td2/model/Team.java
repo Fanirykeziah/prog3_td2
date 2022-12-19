@@ -2,6 +2,7 @@ package com.example.prog3td2.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ManyToAny;
 
 @Entity
 @Table(name = "team")
@@ -17,4 +18,10 @@ public class Team {
     private Long id_team;
 
     private String name;
+
+    @ManyToAny
+    private Sponsor sponsor;
+
+    @ManyToOne
+    private Player players;
 }
