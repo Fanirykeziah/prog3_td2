@@ -6,7 +6,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "match")
+@Table(name = "playagainst")
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
@@ -19,8 +19,12 @@ public class Match {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "team1_id")
     private Team team1;
 
+    @ManyToOne
+    @JoinColumn(name = "team2_id")
     private Team team2;
 
     private LocalDateTime dateTime;

@@ -14,6 +14,7 @@ import java.util.List;
 @Builder
 @Data
 public class TeamResponse {
+    private String name ;
 
     private List<Player> players;
 

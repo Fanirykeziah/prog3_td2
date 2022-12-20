@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ManyToAny;
 
+import java.util.List;
+
 @Entity
 @Table(name = "team")
 @Getter
@@ -19,9 +21,11 @@ public class Team {
 
     private String name;
 
-    @ManyToAny
-    private Sponsor sponsor;
+    @ManyToMany
+    @JoinColumn(name = "id_sponsor")
+    private List<Sponsor> sponsor;
 
-    @ManyToOne
-    private Player players;
+    @OneToMany(mappedBy = "team")
+    @JoinColumn(name = "id_player")
+    private List<Player> players;
 }

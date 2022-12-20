@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 public class TeamRestMapper {
     public TeamResponse toRest(Team domain) {
         return TeamResponse.builder()
-                .players(domain.getName())
-                .sponsors(domain.getName())
+                .players(domain.getPlayers())
+                .sponsors(domain.getSponsor())
                 .build();
     }
 }
