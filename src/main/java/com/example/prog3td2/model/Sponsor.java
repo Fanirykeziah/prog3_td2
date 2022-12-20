@@ -19,7 +19,4 @@ public class Sponsor {
     private Long id;
 
     private String name;
-
-    @ManyToMany
-    private Team team;
 }

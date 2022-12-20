@@ -25,7 +25,7 @@ public class Team {
     @JoinColumn(name = "id_sponsor")
     private List<Sponsor> sponsor;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany
     @JoinColumn(name = "id_player")
     private List<Player> players;
 }
